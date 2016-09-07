@@ -44,7 +44,7 @@ public class DisplayCategoriesActivity extends AppCompatActivity implements epis
 
 
 
-        String JSONurl = "http://ibl.api.bbci.co.uk/ibl/v1/categories/" + message.toLowerCase() + "/highlights?lang=en&rights=mobile&availability=available";
+        String JSONurl = "http://ibl.api.bbci.co.uk/ibl/v1/categories/" + message + "/highlights?lang=en&rights=mobile&availability=available";
         Log.v("JSONURL", JSONurl);
         // layout.addView(textView);
 
@@ -65,10 +65,11 @@ public class DisplayCategoriesActivity extends AppCompatActivity implements epis
                         try {
                             JSONObject categoryHighlights = response.getJSONObject("category_highlights");
                             JSONArray highlightsElements = categoryHighlights.getJSONArray("elements");
-                            String id, title;
+                            String id, title, subtitle;
                             for(int i = 0; i < highlightsElements.length(); i++) {
                                 id = highlightsElements.getJSONObject(i).getString("id");
                                 title = highlightsElements.getJSONObject(i).getString("title");
+                                // subtitle = highlightsElements.getJSONObject(i).getString("subtitle");
 
                                 results.add(title);
                             }

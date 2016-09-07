@@ -61,7 +61,7 @@ public class MainActivity extends AppCompatActivity implements highlightsCallbac
                                 id = categoriesArray.getJSONObject(i).getString("id");
                                 title = categoriesArray.getJSONObject(i).getString("title");
 
-                                results.add(title);
+                                results.add(id);
                             }
                         }
                         catch (JSONException e) {

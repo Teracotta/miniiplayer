@@ -53,14 +53,14 @@ public class HighlightsAdapter extends RecyclerView.Adapter<HighlightsAdapter.Vi
         // - get element from your dataset at this position
         // - replace the contents of the view with that element
         TextView textBlock = (TextView) holder.myView.findViewById(R.id.info_text);
-        final String title = mDataset.get(position);
-        textBlock.setText(title);
+        final String highlightId = mDataset.get(position);
+        textBlock.setText(highlightId);
 
         holder.myView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                // Log.d("MyAdapter - function", title);
-                theListener.callbackCall(title);
+                // Log.d("MyAdapter - function", highlightId);
+                theListener.callbackCall(highlightId);
             }
         });
     }

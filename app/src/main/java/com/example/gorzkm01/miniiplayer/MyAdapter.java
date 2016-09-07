@@ -51,14 +51,14 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder> {
         // - get element from your dataset at this position
         // - replace the contents of the view with that element
         TextView textBlock = (TextView) holder.myView.findViewById(R.id.info_text);
-        final String title = mDataset.get(position);
-        textBlock.setText(title);
+        final String categoryId = mDataset.get(position);
+        textBlock.setText(categoryId);
 
         holder.myView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                // Log.d("MyAdapter - function", title);
-                theListener.callbackCall(title);
+                // Log.d("MyAdapter - function", categoryId);
+                theListener.callbackCall(categoryId);
             }
         });
     }
